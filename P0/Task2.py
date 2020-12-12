@@ -20,3 +20,16 @@ Print a message:
 September 2016.".
 """
 
+e = {}
+# loop all rows
+for row in calls:
+    # loop both columns
+    for i in range(2):
+        # if key already exists summ values
+        if row[i] in e:
+            e[row[i]] += int(row[3])
+        # key does not exist create key with value
+        else:
+            e[row[i]] = int(row[3])
+            
+print("{} spent the longest time, {} seconds, on the phone during September 2016.".format())
