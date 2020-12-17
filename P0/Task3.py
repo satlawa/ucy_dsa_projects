@@ -43,3 +43,36 @@ Print the answer as a part of a message::
 to other fixed lines in Bangalore."
 The percentage should have 2 decimal digits
 """
+
+codes = set()
+
+counter_all = 0
+counter_bang = 0
+
+for row in calls:
+    
+    if row[0].find('(080)') == 0:
+        
+        # Fixed line numbers
+        if row[1].find('(') == 0:
+            codes.add(row[1][:row[1].find(')')+1])
+            counter_all += 1
+            
+            if row[1].find('(080)') == 0:
+                counter_bang += 1
+                
+        # Mobile numbers 
+        elif (row[1].find(' ') > -1) & (row[1][0] in ['7','8','9']):
+            codes.add(row[1][:4])
+            counter_all += 1
+            
+        # Telemarketers  
+        elif row[1].find('140') == 0:
+            codes.add('140')
+            counter_all += 1
+            
+percent = round(counter_bang / counter_all *100, 1))
+
+print("The numbers called by people in Bangalore have codes: {}".format(codes))
+
+print("{} percent of calls from fixed lines in Bangalore are calls to other fixed lines in Bangalore.".format(percent))
