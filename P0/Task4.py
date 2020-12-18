@@ -25,3 +25,18 @@ Print a message:
 The list of numbers should be print out one per line in lexicographic order with no duplicates.
 """
 
+non_marketers = set()
+# loop all rows
+for row in texts:
+    # both columns
+    for i in range(2):
+        s.add(row[i])
+for row in calls:
+    s.add(row[1])
+    
+m = set()
+for row in calls:
+    if not(row[0] in s):
+        m.add(row[0])
+        
+print("These numbers could be telemarketers: {}".format(m))
