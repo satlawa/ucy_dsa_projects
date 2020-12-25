@@ -30,17 +30,21 @@ def get_min_max(ints):
 # Standard test cases
 l = [i for i in range(0, 10)]
 random.shuffle(l)
+# expected output: min:0, max:10
 print ("Pass min:0, max:10" if ((0, 9) == get_min_max(l)) else "Fail min:0, max:10")
 
 ## Edge tast cases
 l = [i for i in range(9, 999999)]
 random.shuffle(l)
+# expected output: min:9, max:999999
 print ("Pass min:9, max:999999" if ((9, 999999) == get_min_max(l)) else "Fail min:9, max:999999")
 
 l = [i for i in range(-20, 20)]
 random.shuffle(l)
+# expected output: min:-20, max:20
 print ("Pass min:-20, max:20" if ((-20, 20) == get_min_max(l)) else "Fail min:-20, max:20")
 
 l = [i for i in range(-999999, -9)]
 random.shuffle(l)
+# expected output: min:-999999, max:-9
 print ("Pass min:-999999, max:-9" if ((-999999, -9) == get_min_max(l)) else "Fail min:-999999, max:-9")

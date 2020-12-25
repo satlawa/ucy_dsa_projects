@@ -10,10 +10,10 @@ def sqrt(number):
        int: Floored Square Root
     """
 
-    if (number == 0) or (number == 1):
+    if (number == 0) or (number == 1) or (number is None):
         return number
 
-    elif (number < 0) or (number is None):
+    elif (number < 0):
         return None
 
     else:
@@ -46,12 +46,12 @@ def sqrt(number):
 
 
 # standard tests
-print ("Pass sqrt(9)" if  (3 == sqrt(9)) else "Fail")
-print ("Pass sqrt(16)" if  (4 == sqrt(16)) else "Fail")
-print ("Pass sqrt(27)" if  (5 == sqrt(27)) else "Fail")
-print ("Pass sqrt(27)" if  (5 == sqrt(27)) else "Fail")
+print ("Pass sqrt(9) = {}".format(sqrt(9)) if  (3 == sqrt(9)) else "Fail")          # expected output: 3
+print ("Pass sqrt(16) = {}".format(sqrt(16)) if  (4 == sqrt(16)) else "Fail")       # expected output: 4
+print ("Pass sqrt(27) = {}".format(sqrt(27)) if  (5 == sqrt(27)) else "Fail")       # expected output: 5
+print ("Pass sqrt(999999) = {}".format(sqrt(999999)) if  (999 == sqrt(999999)) else "Fail") # expected output: 999
 # edge cases
-print ("Pass sqrt(0)" if  (0 == sqrt(1)) else "Fail")
-print ("Pass sqrt(1)" if  (1 == sqrt(1)) else "Fail")
-print ("Pass sqrt(-10)" if  (None == sqrt(-10)) else "Fail")
-print ("Pass sqrt(None)" if  (None == sqrt(None)) else "Fail")
+print ("Pass sqrt(0) = {}".format(sqrt(0)) if  (0 == sqrt(0)) else "Fail")          # expected output: 0
+print ("Pass sqrt(1) = {}".format(sqrt(1)) if  (1 == sqrt(1)) else "Fail")          # expected output: 1
+print ("Pass sqrt(-10) = {}".format(sqrt(-10)) if  (None == sqrt(-10)) else "Fail") # expected output: None
+print ("Pass sqrt(None) = {}".format(sqrt(None)) if  (None == sqrt(None)) else "Fail") # expected output: None
