@@ -25,18 +25,34 @@ Print a message:
 The list of numbers should be print out one per line in lexicographic order with no duplicates.
 """
 
-non_marketers = set()
-# loop all rows
-for row in texts:
-    # both columns
-    for i in range(2):
-        s.add(row[i])
-for row in calls:
-    s.add(row[1])
-    
-m = set()
-for row in calls:
-    if not(row[0] in s):
-        m.add(row[0])
-        
-print("These numbers could be telemarketers: {}".format(m))
+def find_possible_marketers(input_list):
+    """
+    Function for finding possible marketers from a calls and a texts list.
+
+    Args:
+        input_list(list): list containing two lists: calls and texts
+    Return:
+        possible_marketers(set): set of possible marketers
+    """
+    calls, texts = input_list
+    # set to add possible non marketers
+    non_marketers = set()
+    # loop all rows in texts
+    for record in texts:
+        # both columns
+        for i in range(2):
+            non_marketers.add(record[i])
+    # loop all rows in calls
+    for record in calls:
+        non_marketers.add(record[1])
+    # set to add possible marketers
+    possible_marketers = set()
+    for record in calls:
+        if not(record[0] in non_marketers):
+            possible_marketers.add(record[0])
+
+    return possible_marketers
+
+possible_marketers = find_possible_marketers([calls, texts])
+
+print("These numbers could be telemarketers: {}".format(possible_marketers))

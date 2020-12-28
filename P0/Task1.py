@@ -20,7 +20,14 @@ Print a message:
 """
 
 def get_tel_num(input_list):
-    """ extract all unique telephone numbers from provided lists """
+    """
+    Function to extract all unique telephone numbers from provided lists.
+
+    Args:
+        input_list(list): list containing two lists: calls and texts
+    Return:
+        tel_num(set): Set of all unique telephone numbers
+    """
     tel_num = set()
     for recs in input_list:
         for rec in recs:

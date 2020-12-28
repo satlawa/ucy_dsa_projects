@@ -21,6 +21,15 @@ September 2016.".
 """
 
 def get_tel_num_max_time(calls):
+    """
+    Function for finding the telephone number that spent the longest time on the phone.
+
+    Args:
+        calls(list): list containing call records
+    Return:
+        max_len(tuple): tuple containing the telephone number and the time spend on
+        the phone from the telephone number that spent the longest time on the phone.
+    """
     # dictionary for keeping track of the time of every tel number
     tel_nums = {}
     # loop all records
