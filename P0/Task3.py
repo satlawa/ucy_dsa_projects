@@ -44,35 +44,58 @@ to other fixed lines in Bangalore."
 The percentage should have 2 decimal digits
 """
 
-codes = set()
+def bangladore_calls(calls):
+    """
+    Find all of the area codes and mobile prefixes called by people
+    in Bangalore.
 
-counter_all = 0
-counter_bang = 0
+    Args:
+        calls(list):
+    Return:
+        codes(list): sorted list of telephone number codes (prefixes) called by
+        people in Bangalore.
+        counter_ratio(float): percentage of calls from fixed lines in Bangalore
+        that are made to fixed lines also in Bangalore
+    """
+    # storing tel number codes
+    codes = set()
 
-for row in calls:
-    
-    if row[0].find('(080)') == 0:
-        
-        # Fixed line numbers
-        if row[1].find('(') == 0:
-            codes.add(row[1][:row[1].find(')')+1])
+    counter_all = 0
+    counter_bang = 0
+
+    for record in calls:
+        # filter just 080 tel numbers
+        if record[0].find('(080)') == 0:
+
+            # Fixed line numbers
+            if record[1].find('(') == 0:
+                codes.add(record[1][:record[1].find(')')+1])
+
+                # call from 080 to 080
+                if record[1].find('(080)') == 0:
+                    counter_bang += 1
+
+            # Mobile numbers
+            elif (record[1].find(' ') > -1) & (record[1][0] in ['7','8','9']):
+                codes.add(record[1][:4])
+
+            # Telemarketers
+            elif record[1].find('140') == 0:
+                codes.add('140')
+
             counter_all += 1
-            
-            if row[1].find('(080)') == 0:
-                counter_bang += 1
-                
-        # Mobile numbers 
-        elif (row[1].find(' ') > -1) & (row[1][0] in ['7','8','9']):
-            codes.add(row[1][:4])
-            counter_all += 1
-            
-        # Telemarketers  
-        elif row[1].find('140') == 0:
-            codes.add('140')
-            counter_all += 1
-            
-percent = round(counter_bang / counter_all *100, 1))
+
+    # converting to list and sorting
+    codes = sorted(list(codes))
+    # compute the percent of calls from to fixed lines in Bangalore
+    counter_ratio = round(counter_bang / counter_all *100, 1)
+
+    return codes, counter_ratio
+
+
+codes, percent = bangladore_calls(calls)
 
 print("The numbers called by people in Bangalore have codes: {}".format(codes))
 
-print("{} percent of calls from fixed lines in Bangalore are calls to other fixed lines in Bangalore.".format(percent))
+print("{} percent of calls from fixed lines in Bangalore are calls to other \
+fixed lines in Bangalore.".format(percent))
