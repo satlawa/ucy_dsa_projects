@@ -24,6 +24,7 @@ def get_tel_num(input_list):
     tel_num = set()
     for recs in input_list:
         for rec in recs:
+            # loop through both columns with tel numbers
             for i in range(2):
                 tel_num.add(rec[i])
     return tel_num

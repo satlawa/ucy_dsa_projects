@@ -16,20 +16,32 @@ TASK 2: Which telephone number spent the longest time on the phone
 during the period? Don't forget that time spent answering a call is
 also time spent on the phone.
 Print a message:
-"<telephone number> spent the longest time, <total time> seconds, on the phone during 
+"<telephone number> spent the longest time, <total time> seconds, on the phone during
 September 2016.".
 """
 
-e = {}
-# loop all rows
-for row in calls:
-    # loop both columns
-    for i in range(2):
-        # if key already exists summ values
-        if row[i] in e:
-            e[row[i]] += int(row[3])
-        # key does not exist create key with value
-        else:
-            e[row[i]] = int(row[3])
-            
-print("{} spent the longest time, {} seconds, on the phone during September 2016.".format())
+def get_tel_num_max_time(calls):
+    # dictionary for keeping track of the time of every tel number
+    tel_nums = {}
+    # loop all records
+    for record in calls:
+        # loop both columns
+        for i in range(2):
+            # if key already exists summ values
+            if record[i] in tel_nums:
+                tel_nums[record[i]] += int(record[3])
+            # key does not exist create key with value
+            else:
+                tel_nums[record[i]] = int(record[3])
+    # find tel number with max length
+    max_len = ("0",0)
+    for tel_num, length in tel_nums.items():
+        if length > max_len[1]:
+            max_len = (tel_num, length)
+
+    return max_len
+
+tel_num, lenght = get_tel_num_max_time(calls)
+
+print("{} spent the longest time, {} seconds, on the phone during September 2016."\
+.format(tel_num, lenght))
