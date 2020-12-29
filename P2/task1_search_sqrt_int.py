@@ -1,4 +1,6 @@
-## imports
+#------------------------------------------------------#
+#   problem 1 - Square Root of an Integer
+#------------------------------------------------------#
 
 def sqrt(number):
     """
@@ -7,7 +9,7 @@ def sqrt(number):
     Args:
        number(int): Number to find the floored squared root
     Returns:
-       int: Floored Square Root
+       sqrt_int(int): Floored Square Root
     """
 
     if (number == 0) or (number == 1) or (number is None):
