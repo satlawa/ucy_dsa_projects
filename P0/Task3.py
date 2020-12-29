@@ -69,7 +69,7 @@ def bangladore_calls(calls):
 
             # Fixed line numbers
             if record[1].find('(') == 0:
-                codes.add(record[1][:record[1].find(')')+1])
+                codes.add(record[1][1:record[1].find(')')])
 
                 # call from 080 to 080
                 if record[1].find('(080)') == 0:
@@ -95,7 +95,9 @@ def bangladore_calls(calls):
 
 codes, percent = bangladore_calls(calls)
 
-print("The numbers called by people in Bangalore have codes: {}".format(codes))
+print("The numbers called by people in Bangalore have codes:")
+for code in codes:
+    print(code)
 
 print("{} percent of calls from fixed lines in Bangalore are calls to other \
 fixed lines in Bangalore.".format(percent))

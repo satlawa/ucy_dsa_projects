@@ -56,4 +56,6 @@ def find_likely_marketers(input_list):
 
 likely_marketers = find_likely_marketers([calls, texts])
 
-print("These numbers could be telemarketers: {}".format(likely_marketers))
+print("These numbers could be telemarketers:")
+for likely_marketer in likely_marketers:
+    print(likely_marketer)
