@@ -1,0 +1,38 @@
+#------------------------------------------------------------------------------#
+#   Analysis
+#------------------------------------------------------------------------------#
+This file analysis the time complexity of the various tasks. The Big O refers to
+the worst case scenario.
+
+#------------------------------------------------------------------------------#
+Task0
+The Task0 script consists of just two accesses on a Python lists. Since the
+access of a list runs at O(1), the overall time complexity is O(1).
+
+#------------------------------------------------------------------------------#
+Task1
+In Task1 there is one loop that is running through all records in the lists
+twice (for the caller and the receiver). Due to the fact that the loop has a
+a time complexity of O(n) the execution of the script takes ruffly 2*O(n)
+
+#------------------------------------------------------------------------------
+Task2
+In this Task2 script we loop twice through all calls (calling and receiving = n)
+resulting in O(2n) and once thorough the resulting dictionary (unique telephone
+numbers = k) in O(k) to find the telephone number that spent the longest time on
+the phone. At the end we can reduce the time complexity to O(n).
+
+#------------------------------------------------------------------------------#
+Task3
+As in previous tasks we loop through the entire data producing a O(n).
+Nonetheless, at the end we have to sort the final list which takes O(n log n).
+Hence the final time complexity for this task is O(n log n)
+
+#------------------------------------------------------------------------------#
+Task4
+This task script loops twice through the input producing O(2n). However, given
+the fact that the result has to be sorted in lexicographic order, we need to
+sort the final list at the end. The time complexity of the the sorting algorithm
+is O(n log n). Thus, O(2n) + (n log n) can be reduced to (n log n).
+
+#------------------------------------------------------------------------------#
