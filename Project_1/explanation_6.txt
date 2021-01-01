@@ -1,0 +1,31 @@
+#------------------------------------------------------#
+#   problem 6 - Union and Intersection
+#------------------------------------------------------#
+
+Linked lists are very good data structures for prepending or appending nodes as
+well as getting the first node (head) last node (tail) depending on the implementation.
+However, to union or intersect the data of two linked list is very cumbersome.
+Thus, an other data structure, a simple list (or Python set) is much better suited
+(more efficient) for these operations. The approach for this problem is to convert
+the linked lists to lists (sets) preform the operations and convert the resulting list
+back to a linked list.
+
+With regard to the time complexity the conversion needs a loop through the data
+of both lists resulting in O(n). The operations have the following worst case
+time complexities [1]:
+
+* Union:          O(len(list1)+len(list2))  -> O(n)
+* Intersection:   O(len(list1)*len(list2))  -> O(n²)
+
+As for the space complexity, the creation 3 lists results in O(n).
+
+Time complexity:
+* union O(n)
+* Intersection O(n²)
+
+Space complexity: O(n)
+
+
+resources: [1] Python 2020, https://wiki.python.org/moin/TimeComplexity
+
+#------------------------------------------------------#

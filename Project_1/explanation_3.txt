@@ -1,0 +1,30 @@
+#------------------------------------------------------#
+#   problem 3 - Huffman Coding
+#------------------------------------------------------#
+
+The Huffman Algorithm is used to compress data by encoding just used characters
+instead of using the whole ASCII, UTF-8 or any other character encoding standard.
+The algorithm takes advantage of the fact that a text is using often just using
+a fraction of the overall possible characters. It can be divided into three
+distinctive parts, the construction of the Huffman tree, the encoding of data and
+the decoding of the encoded data. The compression magnitude is dependent on the
+length of the data and on the number of unique characters (k) used in the data.
+The tested example showed a compression rate of nearly 50%.
+
+The time complexity is varying for the distinct parts:
+* construction of the Huffman Tree - to construct the tree there are several
+              loops and a search algorithm to sort the queue with O(n log(n))
+* encoding -  we have to loop through every character to translate it to the
+              binary code, thus O(n)
+* decoding -  we have to traverse the tree for every character (n), in the worst
+              case it is the elements in the tree (k), hence O(n log k)
+The space complexity is linearly correlated with the number of unique characters
+encoded in the Huffman tree O(k) and O(n) for the data that is encoded.
+
+Time complexity:
+  construction: O(n log(n))
+  encoding:     O(n)
+  decoding:     O(n log(k))
+Space complexity: O(n)
+
+#------------------------------------------------------#

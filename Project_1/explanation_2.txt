@@ -1,0 +1,19 @@
+#------------------------------------------------------#
+#   problem 2 - File Recursion
+#------------------------------------------------------#
+
+The file system data structure is actually a tree structure, hence the cleanest way
+to check every record (node) is to traverse recursively through the given path.
+The used algorithm in our case is a depth first search.
+
+The time complexity of our problem is dependable on the amount of elements in the
+directory provided. That means the amount subdirectories and the amount of files
+every directory contains. Thus, defining the dependencies as files (f) and directories (d)
+of the directories, this gives us O(d+f) or simplified O(n).
+In respect of time complexity the of our problem, the worst case scenario is to
+call through all nested directories (d) recursively. Hence, the Big O Space is O(d) or O(n)
+
+Time complexity: O(n)
+Space complexity: O(n)
+
+#------------------------------------------------------#

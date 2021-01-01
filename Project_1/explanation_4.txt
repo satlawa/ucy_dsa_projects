@@ -1,0 +1,19 @@
+#------------------------------------------------------#
+#   problem 4 - Active Directory
+#------------------------------------------------------#
+
+The data structure of the class Group is a tree structure, similar to the
+data structure of problem 2. Thus, the way to to check every Group (node) for
+the user is to traverse recursively through the nodes. The used algorithm in our
+case is a depth first search.
+
+The time complexity of our problem is depending on the amount of elements in the
+groups provided. Hence, it is dependent on the number of groups (g) and users (u)
+of the directories, this gives us O(g+u) or simplified O(n).
+Regarding the space complexity of our problem, the worst case scenario is to
+call through all nested groups (g) recursively. Hence, the Big O Space is O(g) or O(n).
+
+Time complexity: O(n)
+Space complexity: O(n)
+
+#------------------------------------------------------#

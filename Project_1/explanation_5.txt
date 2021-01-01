@@ -1,0 +1,23 @@
+#------------------------------------------------------#
+#   problem 5 - Blockchain
+#------------------------------------------------------#
+
+The Blockchain created for this task is essentially an reversed implementation of
+a linked list. This is due to the fact that we are keeping track of the pointer
+to the last node (tail) in contrast to the first node (head) in a normal linked
+list. Additionally a Blockchain is immutable, hence it is not possible to change
+any data by removing or inserting.
+
+Regarding the time complexity the various methods have diverse Big O notations.
+Therefore, the time complexities for all the methods are listed below. As to the
+space complexity, the memory usage grows linearly with the number of nodes, hence O(n).
+
+Time complexity:
+  * size    O(1)
+  * append  O(1)
+  * search  O(n)
+  * to_list O(n)
+
+Space complexity: O(n)
+
+#------------------------------------------------------#

@@ -1,0 +1,24 @@
+#------------------------------------------------------#
+#   problem 1 - Least Recently Used Cache
+#------------------------------------------------------#
+
+The main idea of LRU Cache is that on one hand we want to access the data from the
+cache in constant time O(1), while on the other hand, maintain a list of the most
+recently used data in the cache memory in O(1). While a linked list is the perfect
+data structure to do the later, going through the list to retrieve the right node
+takes O(n) in the worst case. Therefore, if we combine the advantages of a linked
+list with the advantages of hash maps that have O(1) access time, we get the best
+of both worlds. Hence, the LRU Cache is implemented as a mixture of a doubly linked
+list and a hash map.
+
+In terms of time complexity the implementation of the LRU Cache satisfies O(1) for
+both methods:
+* get() (lookup operation)    O(1)
+* set() (inserting operation) O(1)
+The space complexity is depending on the number of elements the cache has to hold,
+thus O(n).
+
+Time complexity: O(1)
+Space complexity: O(n)
+
+#------------------------------------------------------#
