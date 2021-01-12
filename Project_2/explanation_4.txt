@@ -1,0 +1,15 @@
+#------------------------------------------------------#
+#   problem 4 - Dutch National Flag Problem
+#------------------------------------------------------#
+
+To solve this problem of sorting a list that only contains the numbers 0, 1 and 2
+we loop just once trough the array and switch all 0s to the beginning and all
+2s to the end, while leaving the 1s in the middle.
+
+Regarding the time complexity, the algorithm loops once through the array, hence
+O(n). The space complexity is constant, thus O(1).
+
+Time complexity:  O(n)
+Space complexity: O(1)
+
+#------------------------------------------------------#

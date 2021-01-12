@@ -1,0 +1,27 @@
+#------------------------------------------------------#
+#   problem 3 - Rearrange Array Digits
+#------------------------------------------------------#
+
+The task in this problem was to find two numbers with maximum sum formed by array
+digits. Additionally there is a time complexity constraint of O(n log n) that
+needs to be met. To solve the given problem we need a sorted array due to how
+the two numbers with maximum sum are being formed. The formation of two numbers
+with maximum sum follows the following logic:
+The largest number of the array is used as the first digit in the first maximum
+sum number, the second larges number is then used as the first digit in the second
+maximum sum number, the next number in the array is than as the second digit in
+the first maximum sum number, and so on.
+We are solving the problem with first using mergesort to sort the input array and
+than use the sorted numbers in the array to form the two maximum sum numbers.
+
+The algorithm used uses mergesort with a time complexity of O(n log n) followed
+by a loop that goes though all of the elements in the merged array with O(n) to
+form the maximum sum numbers. This results in O(n + n log n) or simplified
+O(n log n). In terms of space complexity the array needs O(n) memory, while
+mergesort needs O(log n) of memory due to the spiting and merging. This results
+finally in O(n).
+
+Time complexity:  O(n log n)
+Space complexity: O(n)
+
+#------------------------------------------------------#

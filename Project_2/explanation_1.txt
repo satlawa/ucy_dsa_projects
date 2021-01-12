@@ -1,0 +1,23 @@
+#------------------------------------------------------#
+#   problem 1 - Square Root of an Integer
+#------------------------------------------------------#
+
+Although the problem can be solved very easily with on line of code:
+ ' sqrt_floored = int(x**(1/2)) '
+the main purpose of this exercise is to practice the learned algorithms.
+Thus, the algorithm we used to solve the problem of the floored square root
+is a adoption of the binary search algorithm. Considering that the square root
+of the positive input variable (x) has to lie somewhere between 1 and x/2,
+we can easily search for the natural number (y) that satisfies y * y = x.
+Using the idea of the binary search we can find y with a time complexity of
+O(log(n)).
+
+The time complexity of this algorithm is O(log2(n)), as it is basically the
+binary search algorithm searching through the range of natural numbers between
+1 and x/2. In terms of space complexity, the memory usage is not dependent on
+the input, hence O(1).
+
+Time complexity:  O(log(n))
+Space complexity: O(1)
+
+#------------------------------------------------------#

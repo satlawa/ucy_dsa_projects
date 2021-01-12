@@ -1,0 +1,21 @@
+#------------------------------------------------------#
+#   problem 5 - Unsorted Integer Array
+#------------------------------------------------------#
+
+In this problem we are constructing a trie data structure. A trie is a tree like
+data structure where every node contains a hash map with the children of the
+particular node and in our case an additional boolean, that stores if the
+trajectory until this particular node is a valid word. To solve the problem and
+find all suffixes given a prefix, we traverse through the branch of the trie
+that matches the prefix and append all suffixes that form valid words.
+
+The time complexity of the trie is depended on the length of the word (l)
+and the number of words in the trie (n). Hence, the worst case time complexity
+for inserting or searching is O(l*n).
+As for the space complexity the worst case scenario is when no word in the
+trie has a common sequence of characters (prefix) resulting in O(n).
+
+Time complexity:  O(l*n)
+Space complexity: O(n)
+
+#------------------------------------------------------#

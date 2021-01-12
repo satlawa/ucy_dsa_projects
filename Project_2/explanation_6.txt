@@ -1,0 +1,15 @@
+#------------------------------------------------------#
+#   problem 6 - Unsorted Integer Array
+#------------------------------------------------------#
+
+The objective of this problem is to find the minimum and the maximum element
+in an array. To accomplish that we just have to go through the array once while
+maintaining the track of the of the minimum and maximum.
+
+The time complexity of this algorithm is simply O(n), while the space complexity
+is constant hence O(1).
+
+Time complexity:  O(n)
+Space complexity: O(1)
+
+#------------------------------------------------------#

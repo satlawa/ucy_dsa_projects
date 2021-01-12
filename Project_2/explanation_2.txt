@@ -1,0 +1,19 @@
+#------------------------------------------------------#
+#   problem 2 - Search in a Rotated Sorted Array
+#------------------------------------------------------#
+
+Considering that the input array is already sorted and it is only rotated, we
+can easily use binary search for searching for the input variable. To achieve
+that we just have to find the pivot in the array, after that we can split the
+array into two parts at the pivot index. Afterwords we determine in witch of
+the split arrays the search value lies and apply binary search on it.
+
+The time complexity of this algorithm is O(2*log2(n)), since we first search
+for the pivot with O(log2(n)) and afterwards use binary search with O(log2(n)).
+In terms of space complexity, the memory usage is not dependent on the input,
+hence O(1).
+
+Time complexity:  O(log(n))
+Space complexity: O(1)
+
+#------------------------------------------------------#
